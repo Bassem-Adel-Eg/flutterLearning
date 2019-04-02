@@ -62,7 +62,6 @@ class _LoginPageState extends State<LoginPage>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   child: TextFormField(
-                    validator: (val) => !(val.length > 8)? 'Invalid Password' : null,
                     onSaved: (val)=> _username = val,
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (text) => FocusScope.of(context).requestFocus(passwordfocusNode),
@@ -87,6 +86,7 @@ class _LoginPageState extends State<LoginPage>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   child: TextFormField( 
+                    validator: (val) => !(val.length >= 8)? 'Invalid Password' : null,
                     onFieldSubmitted: (text){login();},
                     focusNode: passwordfocusNode,
                     obscureText: true,
