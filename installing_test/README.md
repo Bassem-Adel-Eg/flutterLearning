@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+This is a Flutter Login Application using StateFul Widget
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
