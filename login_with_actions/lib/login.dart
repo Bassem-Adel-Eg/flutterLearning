@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage>{
     if(loginform.validate())
     {
       loginform.save();
-      if(_username == 'Bassem' && _password == '1234'){
+      if(_username == 'Bassem' && _password == '12345678'){
         passwordController.text = "";
         Navigator.push(context, MaterialPageRoute(builder: (context) => new LoggedInSuccessfully()));  
       }
@@ -62,6 +62,7 @@ class _LoginPageState extends State<LoginPage>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   child: TextFormField(
+                    validator: (val) => !(val.length > 8)? 'Invalid Password' : null,
                     onSaved: (val)=> _username = val,
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (text) => FocusScope.of(context).requestFocus(passwordfocusNode),
