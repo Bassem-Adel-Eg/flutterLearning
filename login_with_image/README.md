@@ -19,4 +19,3 @@ the following image Shows the user with an image logining path
 the following image Shows the user with no image logining path  
 
 ![](images/no_image.JPG)
-

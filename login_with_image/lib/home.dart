@@ -8,26 +8,36 @@ class HomePage extends StatelessWidget {
   HomePage(User currentuser) {
     loginedUser = currentuser;
   }
-  List<Widget> childen = users.map((user) => view(user.name)).toList();
+  List<Widget> childen = users.map((user) => view(user)).toList();
 
-  static Widget view(String name) {
+  static Widget view(User user) {
     return Padding(
         padding: EdgeInsets.all(10),
         child: Row(
           children: <Widget>[
             Container(
-              decoration: new BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: new BorderRadius.all(Radius.circular(100.0))),
-              padding: EdgeInsets.all(15.0),
               width: 50.0,
-              child: Center(
-                  child: Text(
-                name[0],
-                style: TextStyle(color: Colors.white),
-              )),
+              child: user.image.length > 0
+                  ? ClipOval(
+                      child: Image.memory(
+                        user.getUserImage(),
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : Container(
+                      decoration: new BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius:
+                              new BorderRadius.all(Radius.circular(100.0))),
+                      padding: EdgeInsets.all(15.0),
+                      child: Center(
+                          child: Text(
+                        user.name[0],
+                        style: TextStyle(color: Colors.white),
+                      )),
+                    ),
             ),
-            Padding(padding: EdgeInsets.all(15.0), child: Text(name)),
+            Padding(padding: EdgeInsets.all(15.0), child: Text(user.name)),
           ],
         ));
   }
