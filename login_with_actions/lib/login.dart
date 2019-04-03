@@ -11,15 +11,14 @@ class _LoginPageState extends State<LoginPage>{
 
   final FocusNode passwordfocusNode = new FocusNode();
   final passwordController = new TextEditingController();
-  String _username;
-  String _password;
+  final usernameController = new TextEditingController();
 
   void login(){
     final loginform = formKey.currentState;
     if(loginform.validate())
     {
       loginform.save();
-      if(_username == 'Bassem' && _password == '12345678'){
+      if(usernameController.text == 'Bassem' && passwordController.text == '12345678'){
         passwordController.text = "";
         Navigator.push(context, MaterialPageRoute(builder: (context) => new LoggedInSuccessfully()));  
       }
@@ -37,6 +36,7 @@ class _LoginPageState extends State<LoginPage>{
   @override
   void dispose() {
     passwordController.dispose();
+    usernameController.dispose();
     super.dispose();
   }
   @override
@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   child: TextFormField(
-                    onSaved: (val)=> _username = val,
+                    
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (text) => FocusScope.of(context).requestFocus(passwordfocusNode),
                     decoration: InputDecoration(
@@ -90,7 +90,6 @@ class _LoginPageState extends State<LoginPage>{
                     onFieldSubmitted: (text){login();},
                     focusNode: passwordfocusNode,
                     obscureText: true,
-                    onSaved: (val)=> _password = val,
                     controller: passwordController,
                     decoration: InputDecoration(
                         icon: Icon(

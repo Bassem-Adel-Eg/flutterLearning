@@ -4,14 +4,10 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is using Form and TextFormField Widgets
+This project is using Form and TextFormField widgets with validation of password bigger than 8 characters.
 
-with validation of password bigger than 8 charaters
+It shows a SnackBar when login is wrong. It will show a new page when the login is right.
 
-show a SnackBar when Logins is Wrong 
-
-Show anew page when the logins is right
-
-Deleting the password when returning from a navigation 
+It will delete the password after returning from a navigation. 
 
 ![](image.JPG)
