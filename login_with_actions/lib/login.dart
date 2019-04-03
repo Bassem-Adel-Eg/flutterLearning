@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage>{
                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   child: TextFormField(
-                    
+                    controller: usernameController,
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (text) => FocusScope.of(context).requestFocus(passwordfocusNode),
                     decoration: InputDecoration(
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage>{
                           color: Colors.white70,
                         ),
                         border: InputBorder.none,
-                        labelText: 'User Name Or email address',
+                        labelText: 'Username Or Email',
                         labelStyle: TextStyle(color: Colors.white)),
                   ),
                 ),
@@ -123,10 +123,10 @@ class LoggedInSuccessfully extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome',)
+        title: Text('Home Page',)
         ),
       body: Center(
-        child: Text("welcome To Our Play"),
+        child: Text("Welcome to the home page"),
         ),
     );
   }
