@@ -12,10 +12,10 @@ It shows a SnackBar when login is wrong.
 
 It will delete the password after returning from a navigation. 
 
-the following image shows the user with an image login path
+The following image shows the user with an image login path
 
 ![](images/image.JPG)
 
-the following image shows the user with no image login path
+The following image shows the user with no image login path
 
 ![](images/no_image.JPG)
